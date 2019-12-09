@@ -1,0 +1,58 @@
+{
+  "name": "erofrontend",
+  "version": "1.0.0",
+  "description": "Ero整合前端",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --inline --progress --config config/webpack.dev.conf.js",
+    "start": "npm run dev",
+    "build": "webpack --config config/webpack.prod.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pantsugroups/EroFrontEnd.git"
+  },
+  "author": "pantsugroups",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pantsugroups/EroFrontEnd/issues"
+  },
+  "homepage": "https://github.com/pantsugroups/EroFrontEnd#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-decorators": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.6",
+    "@marko/webpack": "^2.0.0",
+    "babel-loader": "*",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "*",
+    "fibers": "^4.0.2",
+    "file-loader": "*",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.10.3",
+    "less-loader": "*",
+    "marko": "*",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "sass": "^1.23.7",
+    "sass-loader": "*",
+    "style-loader": "*",
+    "url-loader": "*",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
