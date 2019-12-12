@@ -1,36 +1,30 @@
 {
   "name": "erofrontend",
-  "version": "1.0.0",
-  "description": "Ero整合前端",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config config/webpack.dev.conf.js",
-    "start": "npm run dev",
-    "build": "webpack --config config/webpack.prod.conf.js"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pantsugroups/EroFrontEnd.git"
-  },
-  "author": "pantsugroups",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pantsugroups/EroFrontEnd/issues"
-  },
-  "homepage": "https://github.com/pantsugroups/EroFrontEnd#readme",
-  "engines": {
-    "node": ">= 6.0.0",
-    "npm": ">= 3.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
   "dependencies": {
-    "koa": "^2.11.0",
-    "koa-router": "^7.4.0",
-    "koa-static": "^5.0.0",
-    "marko": "^4.18.28"
+    "core-js": "^3.4.3",
+    "register-service-worker": "^1.6.2",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-plugin-pwa": "^4.1.0",
+    "@vue/cli-plugin-router": "^4.1.0",
+    "@vue/cli-service": "^4.1.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.6.10"
   }
 }
