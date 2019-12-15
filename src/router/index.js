@@ -29,5 +29,8 @@ const router = new VueRouter({
   saveScrollPostion: true,
   routes
 })
+new Vue({
+  router
+}).$mount('#app')
 
 export default router
