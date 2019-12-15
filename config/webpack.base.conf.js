@@ -17,7 +17,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      'vue$': 'vue/dist/vue.js',
       '@': resolve('src'),
     }
   },
@@ -25,7 +25,11 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'EroFE'
+      title: 'EroFE',
+      base: process.env.BASE_URL,
+      filename: 'index.html',
+      template: 'index.html',
+      inject: true
     }),
     new MiniCSSExtractPlugin({
       filename: 'style.css'
@@ -34,67 +38,67 @@ module.exports = {
   ],
   module: {
     rules: [{
-        enforce: 'pre',
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/
-      }, {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          is_production ?
+      enforce: 'pre',
+      test: /\.(js|vue)$/,
+      loader: 'eslint-loader',
+      exclude: /node_modules/
+    }, {
+      test: /\.(sa|sc|c)ss$/,
+      use: [
+        is_production ?
           MiniCSSExtractPlugin.loader :
           'vue-style-loader',
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ],
-      }, {
-        test: /\.less$/,
-        use: [
-          is_production ?
+        'style-loader',
+        'css-loader',
+        'sass-loader'
+      ],
+    }, {
+      test: /\.less$/,
+      use: [
+        is_production ?
           MiniCSSExtractPlugin.loader :
           'vue-style-loader',
-          {
-            loader: "css-loader",
-            options: {
-              sourceMap: true
-            }
-          }, {
-            loader: "less-loader",
-            options: {
-              sourceMap: true
-            }
-          },
-        ]
-      }, {
-        test: /\.vue$/,
-        use: [{
-            loader: 'vue-loader',
-            options: {
-              extractCSS: true
-            }
-          },
-          is_production ?
-          MiniCSSExtractPlugin.loader :
-          'vue-style-loader'
-        ]
-      }, {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: ['babel-loader']
+        {
+          loader: "css-loader",
+          options: {
+            sourceMap: true
+          }
+        }, {
+          loader: "less-loader",
+          options: {
+            sourceMap: true
+          }
+        },
+      ]
+    }, {
+      test: /\.vue$/,
+      use: [{
+        loader: 'vue-loader',
+        options: {
+          extractCSS: true
+        }
       },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        loader: [
-          'url-loader'
-        ]
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: [
-          'file-loader'
-        ]
-      }
+      is_production ?
+        MiniCSSExtractPlugin.loader :
+        'vue-style-loader'
+      ]
+    }, {
+      test: /\.js$/,
+      exclude: /(node_modules|bower_components)/,
+      loader: ['babel-loader']
+    },
+    {
+      test: /\.(png|svg|jpg|gif)$/,
+      loader: [
+        'url-loader'
+      ]
+    },
+    {
+      test: /\.(woff|woff2|eot|ttf|otf)$/,
+      loader: [
+        'file-loader'
+      ]
+    }
     ]
   },
   serve: {

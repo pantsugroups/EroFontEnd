@@ -33,6 +33,7 @@
     "eslint-plugin-vue": "^6.0.0",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
+    "vue-cli": "^2.9.6",
     "vue-template-compiler": "^2.6.10",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
