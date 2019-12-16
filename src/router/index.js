@@ -1,13 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import About from '../views/About.vue'
 
 Vue.use(VueRouter)
-Vue.component('home', {
-  components: {
-    Home
-  }
-})
+
 const routes = [{
   path: '/',
   name: 'home',
@@ -19,8 +16,11 @@ const routes = [{
   // route level code-splitting
   // this generates a separate chunk (about.[hash].js) for this route
   // which is lazy-loaded when the route is visited.
-  component: () => import(/* webpackChunkName: "about" */'../views/About.vue')
+  component: About
 }
+  // {
+  //   path:'/game'
+  // }
 ]
 
 const router = new VueRouter({
@@ -29,8 +29,10 @@ const router = new VueRouter({
   saveScrollPostion: true,
   routes
 })
-new Vue({
-  router
-}).$mount('#app')
+
+router.beforeEach((to, from, next) => {
+  document.title = 'EroFE'
+  next()
+})
 
 export default router

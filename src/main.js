@@ -4,8 +4,8 @@ import './registerServiceWorker'
 import router from './router'
 
 Vue.config.productionTip = false
-Vue.component('App', { components: { App } })
-router.beforeEach((to, from, next) => {
-  document.title = to.meta.title
-  next()
-})
+
+new Vue({
+  router,
+  render: h => h(App)
+}).$mount('#app')
