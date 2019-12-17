@@ -4,14 +4,14 @@ const pages = { // mulit pages conf
     template: 'public/index.html',
     filename: 'index.html',
     title: '~主页⭐魔法使之家~'
+  },
+  game: {
+    entry: 'src/game.js',
+    template: 'public/index.html',
+    filename: 'game/index.html',
+    title: '~游戏⭐魔法使之家~'
   }
-  // game: {
-  //   entry: 'src/game.js',
-  //   template: 'public/index.html',
-  //   filename: 'game/index.html',
-  //   title: '~游戏⭐魔法使之家~'
-  // },
-  // light: {
+  // ,light: {
   //   entry: 'src/light.js',
   //   template: 'public/index.html',
   //   filename: 'light/index.html',
