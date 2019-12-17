@@ -1,4 +1,4 @@
-import './registerServiceWorker'
+import "./registerServiceWorker";
 
 /**
  * @param {Vue} Vue
@@ -6,12 +6,12 @@ import './registerServiceWorker'
  * @param {VueRouter} router vue路由
  * @param {String} mount 挂载元素
  */
-const CreateEntryPoint = (Vue, App, router, mount = '#app') => {
-  Vue.config.productionTip = false
+const CreateEntryPoint = (Vue, App, router, mount = "#app") => {
+  Vue.config.productionTip = false;
   return new Vue({
     router,
     render: h => h(App)
-  }).$mount(mount)
-}
+  }).$mount(mount);
+};
 
-export default CreateEntryPoint
+export default CreateEntryPoint;

@@ -68,45 +68,45 @@
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown'
+import VueMarkdown from "vue-markdown";
 
 export default {
   components: { VueMarkdown },
   methods: {
     updateCover (event) {
-      console.log(event.target.files[0])
+      console.log(event.target.files[0]);
     },
     submit () {
-      this.isUploading = true
-      this.errors.title = !this.game.title
+      this.isUploading = true;
+      this.errors.title = !this.game.title;
       for (var i in this.errors) {
         if (this.errors[i]) {
-          this.isUploading = false
-          return null
+          this.isUploading = false;
+          return null;
         }
       }
-      this.isUploading = false
+      this.isUploading = false;
       // upload here
-      return null
+      return null;
     }
   },
   data () {
     return {
       game: {
-        title: '',
-        j_title: '',
-        tags: '',
-        cover: '',
-        description: '',
-        download: ''
+        title: "",
+        j_title: "",
+        tags: "",
+        cover: "",
+        description: "",
+        download: ""
       },
       errors: {
         title: false
       },
       isUploading: false
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

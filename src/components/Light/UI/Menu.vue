@@ -22,13 +22,13 @@
 </template>
 <script>
 export default {
-  name: 'Menu',
+  name: "Menu",
   data () {
     return {
       docked: false,
-      position: 'left'
-    }
+      position: "left"
+    };
   },
-  props: ['menu']
-}
+  props: ["menu"]
+};
 </script>

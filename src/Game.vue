@@ -10,15 +10,15 @@
 </template>
 
 <script>
-import smoothscroll from 'smoothscroll-polyfill'
-import NavBar from './components/Game/NavBar.vue'
+import smoothscroll from "smoothscroll-polyfill";
+import NavBar from "./components/Game/NavBar.vue";
 
 export default {
   components: { NavBar },
   mounted () {
-    smoothscroll.polyfill()
+    smoothscroll.polyfill();
   }
-}
+};
 </script>
 
 <style lang="less">

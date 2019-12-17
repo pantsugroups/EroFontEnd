@@ -37,60 +37,60 @@
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown'
+import VueMarkdown from "vue-markdown";
 
 export default {
   components: { VueMarkdown },
   methods: {
     async loadDeatil () {
       function getCookie (cname) {
-        var name = cname + '='
-        var ca = document.cookie.split(';')
+        var name = cname + "=";
+        var ca = document.cookie.split(";");
         for (var i = 0; i < ca.length; i++) {
-          var c = ca[i].trim()
-          if (c.indexOf(name) === 0) return c.substring(name.length, c.length)
+          var c = ca[i].trim();
+          if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
         }
-        return ''
+        return "";
       }
-      const jwt = getCookie('token')
-      const game = await this.$api.get(`/archive/${this.$route.params.id}`)
-      this.game = game.data
-      if (jwt !== '') {
+      const jwt = getCookie("token");
+      const game = await this.$api.get(`/archive/${this.$route.params.id}`);
+      this.game = game.data;
+      if (jwt !== "") {
         const loginGame = await this.$api.get(`/archive/primary/${this.$route.params.id}`, {
           headers: {
-            Authorization: 'Bearer ' + jwt
+            Authorization: "Bearer " + jwt
           }
-        })
-        var link = loginGame.data.primary_content
+        });
+        var link = loginGame.data.primary_content;
       } else {
-        link = this.game.primary_content
+        link = this.game.primary_content;
       }
 
       // const link = await this.$api.get(
       //   `/archive/${this.$route.params.id}`
       // );
 
-      this.downloadLink = link
+      this.downloadLink = link;
 
-      document.title = `${this.game.title} - EroGame`
-      this.loading = false
+      document.title = `${this.game.title} - EroGame`;
+      this.loading = false;
     }
   },
   async mounted () {
-    document.title = '加载中... - EroGame'
-    this.loadDeatil()
+    document.title = "加载中... - EroGame";
+    this.loadDeatil();
   },
   data () {
     return {
       game: {
-        title: '加载中...',
-        content: ''
+        title: "加载中...",
+        content: ""
       },
       loading: true,
-      downloadLink: ''
-    }
+      downloadLink: ""
+    };
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

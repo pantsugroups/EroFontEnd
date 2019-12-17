@@ -115,50 +115,50 @@
 </template>
 <script>
 /* import Carousel from '@/components/Light/UI/Carousel.vue' */
-import Background from '@/components/Light/UI/Background.vue'
-import NavBar from '@/components/Light/UI/NavBar.vue'
-import Menu from '@/components/Light/UI/Menu.vue'
+import Background from "@/components/Light/UI/Background.vue";
+import NavBar from "@/components/Light/UI/NavBar.vue";
+import Menu from "@/components/Light/UI/Menu.vue";
 export default {
-  name: 'Archives',
+  name: "Archives",
   created: () => {
-    fetch(this.$config.api_base + 'novel/' + this.$route.params.id, {
-      method: 'get',
-      credentials: 'include'
+    fetch(this.$config.api_base + "novel/" + this.$route.params.id, {
+      method: "get",
+      credentials: "include"
     })
       .then(data => data.json())
       .then(data => {
         if (data.status === 0 && data.count !== 0) {
-          this.novel = data.data
+          this.novel = data.data;
         }
-      })
-    fetch(this.$config.api_base + 'novel/volume/' + this.$route.params.id, {
-      method: 'get',
-      credentials: 'include'
+      });
+    fetch(this.$config.api_base + "novel/volume/" + this.$route.params.id, {
+      method: "get",
+      credentials: "include"
     })
       .then(data => data.json())
       .then(data => {
         if (data.status === 0 && data.count !== 0) {
           data.data.forEach(element => {
-            console.log(element)
-            this.volumes.push(element)
-          })
+            console.log(element);
+            this.volumes.push(element);
+          });
         }
-      })
+      });
     fetch(
-      this.$config.api_base + 'comments/' + this.$route.params.id + '?type=2',
+      this.$config.api_base + "comments/" + this.$route.params.id + "?type=2",
       {
-        method: 'get',
-        credentials: 'include'
+        method: "get",
+        credentials: "include"
       }
     )
       .then(data => data.json())
       .then(data => {
         if (data.status === 0 && data.count !== 0) {
           data.data.forEach(element => {
-            this.comments.push(element)
-          })
+            this.comments.push(element);
+          });
         }
-      })
+      });
   },
   data () {
     return {
@@ -166,18 +166,18 @@ export default {
         open: false
       },
       novel: {
-        title: '',
-        description: '',
-        cover: '',
-        author: '',
-        tags: ''
+        title: "",
+        description: "",
+        cover: "",
+        author: "",
+        tags: ""
       },
       volumes: [],
-      comment: '',
+      comment: "",
       comments: [],
-      reply: '撰写回复',
+      reply: "撰写回复",
       reply_id: 0
-    }
+    };
   },
   components: {
     NavBar,
@@ -188,90 +188,90 @@ export default {
   methods: {
     download: function (id) {
       function getCookie (cname) {
-        var name = cname + '='
-        var ca = document.cookie.split('')
+        var name = cname + "=";
+        var ca = document.cookie.split("");
         for (var i = 0; i < ca.length; i++) {
-          var c = ca[i].trim()
-          if (c.indexOf(name) === 0) return c.substring(name.length, c.length)
+          var c = ca[i].trim();
+          if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
         }
-        return ''
+        return "";
       }
-      const token = getCookie('token')
-      if (token === '') {
-        alert('请先登录')
-        return
+      const token = getCookie("token");
+      if (token === "") {
+        alert("请先登录");
+        return;
       }
-      var formData = new FormData()
-      formData.append('title', this.comment)
-      formData.append('type', 2)
-      formData.append('raw', this.$route.params.id)
-      fetch(this.$config.api_base + 'volume/' + id, {
-        method: 'get',
-        mode: 'cors',
-        credentials: 'include',
+      var formData = new FormData();
+      formData.append("title", this.comment);
+      formData.append("type", 2);
+      formData.append("raw", this.$route.params.id);
+      fetch(this.$config.api_base + "volume/" + id, {
+        method: "get",
+        mode: "cors",
+        credentials: "include",
         headers: {
-          Authorization: 'Bearer ' + token
+          Authorization: "Bearer " + token
         }
       })
         .then(data => data.json())
         .then(data => {
           if (data.status === 0 && data.count !== 0) {
-            console.log(data)
-            alert('成功，将扣除您一点下载点数！')
+            console.log(data);
+            alert("成功，将扣除您一点下载点数！");
             window.open(
               this.$config.api_base +
-                'download?token=' +
+                "download?token=" +
                 data.data.token +
-                '&hash=' +
+                "&hash=" +
                 data.data.hash +
-                '&filename=' +
+                "&filename=" +
                 data.data.filename +
-                '&id=' +
+                "&id=" +
                 data.data.id,
-              '_blank'
-            )
+              "_blank"
+            );
           }
         })
         .catch(data => {
-          alert('失败，原因：' + data.msg)
-        })
+          alert("失败，原因：" + data.msg);
+        });
     },
     CreateComment () {
       function getCookie (cname) {
-        var name = cname + '='
-        var ca = document.cookie.split('')
+        var name = cname + "=";
+        var ca = document.cookie.split("");
         for (var i = 0; i < ca.length; i++) {
-          var c = ca[i].trim()
-          if (c.indexOf(name) === 0) return c.substring(name.length, c.length)
+          var c = ca[i].trim();
+          if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
         }
-        return ''
+        return "";
       }
-      const token = getCookie('token')
-      if (token === '') {
-        alert('请先登录')
-        return
+      const token = getCookie("token");
+      if (token === "") {
+        alert("请先登录");
+        return;
       }
-      var formData = new FormData()
-      formData.append('title', this.comment)
-      formData.append('type', 2)
-      formData.append('raw', this.$route.params.id)
-      fetch(this.$config.api_base + 'comment/', {
-        method: 'post',
-        mode: 'cors',
-        credentials: 'include',
+      var formData = new FormData();
+      formData.append("title", this.comment);
+      formData.append("type", 2);
+      formData.append("raw", this.$route.params.id);
+      fetch(this.$config.api_base + "comment/", {
+        method: "post",
+        mode: "cors",
+        credentials: "include",
         headers: {
-          Authorization: 'Bearer ' + token
+          Authorization: "Bearer " + token
         },
         body: formData
       })
         .then(data => data.json())
         .then(data => {
           if (data.status === 0 && data.count !== 0) {
-            alert('回复成功')
-            location.reload()
+            alert("回复成功");
+            location.reload();
           }
-        })
+        });
     }
   }
-}
+};
 </script>

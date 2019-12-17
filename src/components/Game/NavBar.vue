@@ -21,50 +21,50 @@
 
 <script>
 export default {
-  name: 'NavBar',
+  name: "NavBar",
   data () {
     return {
-      username: '登陆',
+      username: "登陆",
       isMobile: document.body.clientWidth <= 768,
       islogin: false,
       navItems: {
         games: {
-          route: 'games',
-          icon: 'game',
-          content: '游戏库'
+          route: "games",
+          icon: "game",
+          content: "游戏库"
         },
         category: {
-          route: 'category',
-          icon: 'archive',
-          content: '分类 / 搜索'
+          route: "category",
+          icon: "archive",
+          content: "分类 / 搜索"
         }
       }
-    }
+    };
   },
   methods: {
     goto (where) {
-      this.$router.push({ name: where })
+      this.$router.push({ name: where });
     },
     isActive (name) {
-      return this.$route.name === name
+      return this.$route.name === name;
     },
     async isLogin () {
       function getCookie (cname) {
-        var name = cname + '='
-        var ca = document.cookie.split(';')
+        var name = cname + "=";
+        var ca = document.cookie.split(";");
         for (var i = 0; i < ca.length; i++) {
-          var c = ca[i].trim()
-          if (c.indexOf(name) === 0) return c.substring(name.length, c.length)
+          var c = ca[i].trim();
+          if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
         }
-        return ''
+        return "";
       }
-      const jwt = getCookie('token')
+      const jwt = getCookie("token");
       const resp = await this.$api
-        .get('user/', {
+        .get("user/", {
           headers: {
-            Authorization: 'Bearer ' + jwt
+            Authorization: "Bearer " + jwt
           }
-        })
+        });
         // fetch(this.$config.api_base + "user/", {
         //   methods: "get",
         //   credentials: "include",
@@ -86,17 +86,17 @@ export default {
         //   return (this.data.islogin = false);
         // });
       if (resp.status === 0) {
-        this.username = resp.data.user_name
-        return true
+        this.username = resp.data.user_name;
+        return true;
       } else {
-        return false
+        return false;
       }
     }
   },
   async mounted () {
-    this.islogin = await this.isLogin()
+    this.islogin = await this.isLogin();
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

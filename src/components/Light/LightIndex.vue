@@ -82,21 +82,21 @@
 </template>
 
 <script>
-import Carousel from '@/components/Light/UI/Carousel.vue'
-import Background from '@/components/Light/UI/Background.vue'
-import NavBar from '@/components/Light/UI/NavBar.vue'
-import Menu from '@/components/Light/UI/Menu.vue'
+import Carousel from "@/components/Light/UI/Carousel.vue";
+import Background from "@/components/Light/UI/Background.vue";
+import NavBar from "@/components/Light/UI/NavBar.vue";
+import Menu from "@/components/Light/UI/Menu.vue";
 export default {
-  name: 'Index',
+  name: "Index",
   methods: {
     flush: function () {
-      console.log(this.current)
-      this.novels = []
+      console.log(this.current);
+      this.novels = [];
       fetch(
-        this.$config.api_base + 'novel/?page=' + this.current + '&page_size=16',
+        this.$config.api_base + "novel/?page=" + this.current + "&page_size=16",
         {
-          method: 'get',
-          credentials: 'include'
+          method: "get",
+          credentials: "include"
         }
       )
         .then(data => data.json())
@@ -105,22 +105,22 @@ export default {
             data.data.forEach(element => {
               element.update_time = new Date(parseInt(element.update_at) * 1000)
                 .toLocaleString()
-                .replace(/:\d{1,2}$/, ' ')
-              element.tag = element.tags.split('/')
-              this.novels.push(element)
-            })
-            this.total = data.all
-            console.log(data)
+                .replace(/:\d{1,2}$/, " ");
+              element.tag = element.tags.split("/");
+              this.novels.push(element);
+            });
+            this.total = data.all;
+            console.log(data);
           }
-        })
+        });
     }
   },
   created () {
     fetch(
-      this.$config.api_base + 'novel/?page=' + this.current + '&page_size=16',
+      this.$config.api_base + "novel/?page=" + this.current + "&page_size=16",
       {
-        method: 'get',
-        credentials: 'include'
+        method: "get",
+        credentials: "include"
       }
     )
       .then(data => data.json())
@@ -129,14 +129,14 @@ export default {
           data.data.forEach(element => {
             element.update_time = new Date(parseInt(element.update_at) * 1000)
               .toLocaleString()
-              .replace(/:\d{1,2}$/, ' ')
-            element.tag = element.tags.split('/')
-            this.novels.push(element)
-          })
-          this.total = data.all
-          console.log(data)
+              .replace(/:\d{1,2}$/, " ");
+            element.tag = element.tags.split("/");
+            this.novels.push(element);
+          });
+          this.total = data.all;
+          console.log(data);
         }
-      })
+      });
   },
   data () {
     return {
@@ -146,7 +146,7 @@ export default {
       novels: [],
       current: 1,
       total: 24
-    }
+    };
   },
   components: {
     NavBar,
@@ -154,5 +154,5 @@ export default {
     Carousel,
     Background
   }
-}
+};
 </script>

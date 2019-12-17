@@ -9,33 +9,33 @@
 </template>
 <script>
 export default {
-  name: 'NavBar',
-  props: ['menu'],
+  name: "NavBar",
+  props: ["menu"],
   data () {
     return {
       data: {
-        navbar: '登陆'
+        navbar: "登陆"
       }
-    }
+    };
   },
   created () {
     function getCookie (cname) {
-      var name = cname + '='
-      var ca = document.cookie.split(';')
+      var name = cname + "=";
+      var ca = document.cookie.split(";");
       for (var i = 0; i < ca.length; i++) {
-        var c = ca[i].trim()
-        if (c.indexOf(name) === 0) return c.substring(name.length, c.length)
+        var c = ca[i].trim();
+        if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
       }
-      return ''
+      return "";
     }
-    const token = getCookie('token')
+    const token = getCookie("token");
 
-    if (token !== '') {
-      const userString = window.atob(token.split('.')[1])
+    if (token !== "") {
+      const userString = window.atob(token.split(".")[1]);
 
-      const user = JSON.parse(userString).username
-      this.data.navbar = user
+      const user = JSON.parse(userString).username;
+      this.data.navbar = user;
     }
   }
-}
+};
 </script>

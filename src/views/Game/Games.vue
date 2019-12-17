@@ -23,79 +23,79 @@
 </template>
 
 <script>
-import GameCard from '@/components/Game/GameCard.vue'
+import GameCard from "@/components/Game/GameCard.vue";
 
 export default {
-  name: 'Games',
+  name: "Games",
   components: {
     GameCard
   },
   methods: {
     async load () {
-      this.loading = true
-      let resp = await this.$api.get(`/archive/?page=${this.page}`)
+      this.loading = true;
+      let resp = await this.$api.get(`/archive/?page=${this.page}`);
       if (this.$route.query.s !== undefined) {
-        resp = await this.$api.post('/search/archive/', {
+        resp = await this.$api.post("/search/archive/", {
           keyword: this.$route.query.s
-        })
+        });
       }
-      const data = resp.data
+      const data = resp.data;
       if (data == null) {
-        alert('没有找到结果，也许后端炸了也许本来就没有结果')
-        window.location.href = '/games'
-        return null
+        alert("没有找到结果，也许后端炸了也许本来就没有结果");
+        window.location.href = "/games";
+        return null;
       }
       if (data.length === 0) {
-        this.totalPage = --this.page
-        this.$router.push({ name: 'games', params: { page: this.page } })
-        this.pushback = true
-        this.loading = false
-        return null
+        this.totalPage = --this.page;
+        this.$router.push({ name: "games", params: { page: this.page } });
+        this.pushback = true;
+        this.loading = false;
+        return null;
       }
       if (this.pushback) {
-        this.pushback = false
-        this.loading = false
-        return null
+        this.pushback = false;
+        this.loading = false;
+        return null;
       }
-      this.games = []
+      this.games = [];
       data.forEach(element => {
-        if (!element.cover.startsWith('http')) { element.cover = 'https://api.ero.ink' + element.cover }
-        this.games.push(element)
-      })
-      this.loading = false
-      window.scroll({ top: 0, left: 0, behavior: 'smooth' })
+        if (!element.cover.startsWith("http")) { element.cover = "https://api.ero.ink" + element.cover; }
+        this.games.push(element);
+      });
+      this.loading = false;
+      window.scroll({ top: 0, left: 0, behavior: "smooth" });
     },
     async prePage () {
-      this.$router.push({ name: 'games', params: { page: --this.page } })
+      this.$router.push({ name: "games", params: { page: --this.page } });
     },
     async nextPage () {
-      this.$router.push({ name: 'games', params: { page: ++this.page } })
+      this.$router.push({ name: "games", params: { page: ++this.page } });
     }
   },
   beforeRouteEnter (to, from, next) {
-    if (from.name === 'detail') {
-      to.meta.isBack = true
+    if (from.name === "detail") {
+      to.meta.isBack = true;
     }
-    next()
+    next();
   },
   async beforeRouteUpdate (to, from, next) {
     if (from.name === to.name) {
-      await this.load()
+      await this.load();
     }
-    next()
+    next();
   },
   async activated () {
     if (!this.$route.meta.isBack) {
-      await this.load()
+      await this.load();
     }
-    this.$route.meta.isBack = false
+    this.$route.meta.isBack = false;
   },
   data () {
-    let p = this.$route.params.page
+    let p = this.$route.params.page;
     if (p === undefined) {
-      p = 1
+      p = 1;
     } else {
-      p = parseInt(p)
+      p = parseInt(p);
     }
     return {
       games: [],
@@ -103,9 +103,9 @@ export default {
       totalPage: NaN,
       pushback: false,
       loading: false
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

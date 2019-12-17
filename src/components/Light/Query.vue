@@ -85,27 +85,27 @@
 </template>
 <script>
 // import Carousel from '@/components/Light/UI/Carousel.vue'
-import Background from '@/components/Light/UI/Background.vue'
-import NavBar from '@/components/Light/UI/NavBar.vue'
-import Menu from '@/components/Light/UI/Menu.vue'
+import Background from "@/components/Light/UI/Background.vue";
+import NavBar from "@/components/Light/UI/NavBar.vue";
+import Menu from "@/components/Light/UI/Menu.vue";
 export default {
-  name: 'Query',
+  name: "Query",
   data () {
     return {
       menu: {
         open: false
       },
       form: {
-        input: '',
-        select: '',
-        date: '',
-        radio: '',
+        input: "",
+        select: "",
+        date: "",
+        radio: "",
         checkbox: [],
         switch: false,
         slider: 30,
-        textarea: ''
+        textarea: ""
       }
-    }
+    };
   },
   components: {
     NavBar,
@@ -113,5 +113,5 @@ export default {
     // Carousel,
     Background
   }
-}
+};
 </script>

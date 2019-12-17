@@ -29,15 +29,15 @@
 
 <script>
 export default {
-  name: 'GameCard',
-  props: ['game'],
+  name: "GameCard",
+  props: ["game"],
   methods: {
     openURL () {
-      const id = this.game.id
-      this.$router.push({ name: 'detail', params: { id } })
+      const id = this.game.id;
+      this.$router.push({ name: "detail", params: { id } });
     }
   }
-}
+};
 </script>
 
 <style lang='less' scoped>
