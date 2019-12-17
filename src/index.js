@@ -1,5 +1,6 @@
 import CreateEntryPoint from './utils/CreateEntryPoint'
-import App from './App'
+import App from './Index.vue'
 import router from './router/index'
+import Vue from 'vue'
 
-CreateEntryPoint(App, router, '#app')
+CreateEntryPoint(Vue, App, router, '#app')
