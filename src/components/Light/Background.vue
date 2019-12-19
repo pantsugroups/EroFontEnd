@@ -9,7 +9,7 @@ export default {
 
 <style scoped>
 div {
-  background-image: url("../../../assets/bg.jpg");
+  background-image: url("/img/light/bg.jpg");
   background-color: white;
   background-size: cover;
   position: fixed;

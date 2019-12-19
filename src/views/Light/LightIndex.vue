@@ -82,10 +82,10 @@
 </template>
 
 <script>
-import Carousel from "@/components/Light/UI/Carousel.vue";
-import Background from "@/components/Light/UI/Background.vue";
-import NavBar from "@/components/Light/UI/NavBar.vue";
-import Menu from "@/components/Light/UI/Menu.vue";
+import Carousel from "@/components/Light/Carousel.vue";
+import Background from "@/components/Light/Background.vue";
+import NavBar from "@/components/Light/NavBar.vue";
+import Menu from "@/components/Light/Menu.vue";
 export default {
   name: "Index",
   methods: {

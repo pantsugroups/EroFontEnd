@@ -9,8 +9,8 @@
   </mu-carousel>
 </template>
 <script>
-import IMG1 from "@/assets/carousel1.jpg";
-import IMG2 from "@/assets/carousel2.jpg";
+import IMG1 from "@/../public/img/example/carousel1.jpg";
+import IMG2 from "@/../public/img/example/carousel2.jpg";
 export default {
   name: "Carousel",
   data () {

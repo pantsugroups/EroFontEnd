@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Index from "@/components/Light/LightIndex";
-import Archives from "@/components/Light/Archives";
-import Query from "@/components/Light/Query";
+import Index from "@/views/Light/LightIndex";
+import Archives from "@/views/Light/Archives";
+import Query from "@/views/Light/Query";
 
 Vue.use(Router);
 

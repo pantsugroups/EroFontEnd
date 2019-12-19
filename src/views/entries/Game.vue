@@ -11,7 +11,7 @@
 
 <script>
 import smoothscroll from "smoothscroll-polyfill";
-import NavBar from "./components/Game/NavBar.vue";
+import NavBar from "@/components/Game/NavBar.vue";
 
 export default {
   components: { NavBar },

@@ -1,8 +1,8 @@
-import CreateEntryPoint from "./utils/CreateEntryPoint";
-import App from "./Light.vue";
-import router from "./router/light";
+import CreateEntryPoint from "@/utils/CreateEntryPoint";
+import App from "@/views/entries/Light.vue";
+import router from "@/router/light";
 import Vue from "vue";
-import config from "./config";
+import config from "@/config";
 import MuseUI from "muse-ui";
 import "muse-ui/dist/muse-ui.css";
 import "typeface-roboto";

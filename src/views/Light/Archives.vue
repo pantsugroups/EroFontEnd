@@ -90,7 +90,7 @@
             <mu-card>
               <mu-card-header title='ZF' sub-title='2019-10-10 00:01'>
                 <mu-avatar slot='avatar' color='red'>
-                  <img src='./../assets/avatar.jpg' />
+                  <img src='/public/img/example/avatar.jpg' />
                 </mu-avatar>
               </mu-card-header>
               <mu-card-text style='padding:0px 30px'>
@@ -114,10 +114,10 @@
   </div>
 </template>
 <script>
-/* import Carousel from '@/components/Light/UI/Carousel.vue' */
-import Background from "@/components/Light/UI/Background.vue";
-import NavBar from "@/components/Light/UI/NavBar.vue";
-import Menu from "@/components/Light/UI/Menu.vue";
+/* import Carousel from '@/components/Light/Carousel.vue' */
+import Background from "@/components/Light/Background.vue";
+import NavBar from "@/components/Light/NavBar.vue";
+import Menu from "@/components/Light/Menu.vue";
 export default {
   name: "Archives",
   created: () => {

@@ -1,26 +1,26 @@
 const pages = { // mulit pages conf
   index: {
-    entry: "src/index.js",
+    entry: "src/entries/index.js",
     template: "public/index.html",
-    filename: "index.html",
+    filename: "index.html", // http://exapmle.com/
     title: "~主页⭐魔法使之家~"
   },
   game: {
-    entry: "src/game.js",
+    entry: "src/entries/game.js",
     template: "public/index.html",
-    filename: "game/index.html",
+    filename: "game/index.html", // http://exapmle.com/game
     title: "~游戏⭐魔法使之家~"
   },
   light: {
-    entry: "src/light.js",
+    entry: "src/entries/light.js",
     template: "public/index.html",
-    filename: "light/index.html",
+    filename: "light/index.html", // http://exapmle.com/light
     title: "~小说⭐魔法使之家~"
   },
   user: {
-    entry: "src/user.js",
+    entry: "src/entries/user.js",
     template: "public/index.html",
-    filename: "user/index.html",
+    filename: "user/index.html", // http://exapmle.com/user
     title: "~用户中心⭐魔法使之家~"
   }
 };

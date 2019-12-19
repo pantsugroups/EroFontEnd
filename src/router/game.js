@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-// import Index from '../views/Game/Game/Index.vue'
+// import Index from '@/views/Game/Game/Index.vue'
 
 Vue.use(Router);
 
@@ -22,7 +22,7 @@ const router = new Router({
       path: "/",
       name: "index",
       component: () => {
-        return import(/* webpackChunkName: 'games' */ "../views/Game/Games.vue");
+        return import(/* webpackChunkName: 'games' */ "@/views/Game/Games.vue");
       },
       meta: {
         isBack: false,
@@ -33,7 +33,7 @@ const router = new Router({
       path: "/games/:page?",
       name: "games",
       component: () => {
-        return import(/* webpackChunkName: 'games' */ "../views/Game/Games.vue");
+        return import(/* webpackChunkName: 'games' */ "@/views/Game/Games.vue");
       },
       meta: {
         isBack: false,
@@ -44,7 +44,7 @@ const router = new Router({
       path: "/category",
       name: "category",
       component: () => {
-        return import(/* webpackChunkName: 'category' */ "../views/Game/Category.vue");
+        return import(/* webpackChunkName: 'category' */ "@/views/Game/Category.vue");
       },
       meta: {
         title: "分类 - EroGame"
@@ -54,14 +54,14 @@ const router = new Router({
       path: "/detail/:id",
       name: "detail",
       component: () => {
-        return import(/* webpackChunkName: 'detail' */ "../views/Game/Detail.vue");
+        return import(/* webpackChunkName: 'detail' */ "@/views/Game/Detail.vue");
       }
     },
     {
       path: "/create",
       name: "create",
       component: () => {
-        return import(/* webpackChunkName: 'create' */ "../views/Game/Create.vue");
+        return import(/* webpackChunkName: 'create' */ "@/views/Game/Create.vue");
       },
       meta: {
         title: "添加游戏 - EroGame"

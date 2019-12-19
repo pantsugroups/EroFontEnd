@@ -23,7 +23,20 @@
 
 ## 改动
 
-将eroLogin更改为User，即用户中心
+将EroLogin更改为User，即用户中心
+
+## Todo
+
+- [ ] 整理资源
+- [ ] 对接后端
+
+## Coding Guide
+
+放在public下的文件会被解析到root
+
+`public/img/a.png` -->build-->`/img/a.png`
+
+所以在写的时候引用public里面的资源就可以直接用根目录了，或者`<%= BASE_PATH %>/example.png`
 
 ## 安装
 ```

@@ -57,7 +57,7 @@
           <mu-paper class="demo-paper" :z-depth="3">
             <mu-card>
               <mu-card-media title="幻兽调查员" sub-title="绫里惠史">
-                <img src="@/assets/book1.jpg" />
+                <img src="/img/example/book1.jpg" />
               </mu-card-media>
               <mu-card-text>
                 <mu-chip>
@@ -84,10 +84,10 @@
   </div>
 </template>
 <script>
-// import Carousel from '@/components/Light/UI/Carousel.vue'
-import Background from "@/components/Light/UI/Background.vue";
-import NavBar from "@/components/Light/UI/NavBar.vue";
-import Menu from "@/components/Light/UI/Menu.vue";
+// import Carousel from '@/components/Light/Carousel.vue'
+import Background from "@/components/Light/Background.vue";
+import NavBar from "@/components/Light/NavBar.vue";
+import Menu from "@/components/Light/Menu.vue";
 export default {
   name: "Query",
   data () {

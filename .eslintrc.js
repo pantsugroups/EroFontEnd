@@ -12,8 +12,8 @@ module.exports = {
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
     semi: ["warn", "always"],
     quotes: ["warn", "double"],
-    eqeqeq: ["warn"],
-    camelcase: ["warn"],
+    eqeqeq: ["off"],
+    camelcase: ["off"],
     'space-before-function-paren': ["warn"]
   },
   parserOptions: {

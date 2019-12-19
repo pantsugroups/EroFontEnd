@@ -4,10 +4,7 @@
       <div class="holder" style="height: 35vh"></div>
       <h1 class="ui header">欢迎</h1>
       <p>在这里寻找你喜爱的Galgame！</p>
-      <button
-        class="huge ui right labeled icon button"
-        @click="$router.push('games')"
-      >
+      <button class="huge ui right labeled icon button" @click="$router.push('games')">
         <i class="right arrow icon"></i>
         开始探索
       </button>
@@ -23,7 +20,7 @@ p {
   font-size: 2em !important;
 }
 .ui.container {
-  background: url("../assets/cover.jpg");
+  background: url("cover.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;

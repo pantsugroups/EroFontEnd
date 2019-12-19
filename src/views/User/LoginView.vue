@@ -3,7 +3,7 @@
     <div class="panel login-panel">
       <div class="double-column">
         <div class="panel-wide">
-          <img class="login-img" src="login.jpg" />
+          <img class="login-img" src="img/login.jpg" />
           <a
             class="login-img-source"
             href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=72175889"
