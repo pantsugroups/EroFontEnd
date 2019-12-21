@@ -14,7 +14,8 @@ module.exports = {
     quotes: ["warn", "double"],
     eqeqeq: ["off"],
     camelcase: ["off"],
-    'space-before-function-paren': ["warn"]
+    "space-before-function-paren": ["warn"],
+    "no-console": ["warn"]
   },
   parserOptions: {
     parser: "babel-eslint"

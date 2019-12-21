@@ -33,8 +33,8 @@ export default {
     BookSettingsPanel,
     UploadPanel
   },
-  created() {
-    function getCookie(cname) {
+  created () {
+    function getCookie (cname) {
       var name = cname + "=";
       var ca = document.cookie.split(";");
       for (var i = 0; i < ca.length; i++) {
@@ -100,7 +100,7 @@ export default {
         this.$cookies.remove("token");
       });
   },
-  data() {
+  data () {
     return {
       user: ""
     };

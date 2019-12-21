@@ -31,7 +31,7 @@ export default {
   props: {
     types: String,
     book: {
-      default: function() {
+      default: function () {
         return {
           id: 0,
           type: "novelid",
@@ -48,7 +48,7 @@ export default {
   },
 
   methods: {
-    deleteClick() {
+    deleteClick () {
       console.log(1);
       const jwt = localStorage.getItem("jwt");
       if (jwt === null) {

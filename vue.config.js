@@ -26,8 +26,10 @@ const pages = { // mulit pages conf
 };
 
 const vueConf = {
-  publicPath: "./",
+  publicPath: "/",
   outputDir: "dist",
+  //  indexPath: "no/index.html",
+  //  filenameHashing: false,//default true
   assetsDir: "public", // default: static
   productionSourceMap: false, // default: true
   crossorigin: "use-credentials", // default: undefined

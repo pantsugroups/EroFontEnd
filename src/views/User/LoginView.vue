@@ -3,7 +3,7 @@
     <div class="panel login-panel">
       <div class="double-column">
         <div class="panel-wide">
-          <img class="login-img" src="img/login.jpg" />
+          <img class="login-img" src="/img/login.jpg" />
           <a
             class="login-img-source"
             href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=72175889"
@@ -28,7 +28,12 @@
           </div>
           <div style="text-align:right">
             <label>
-              <a href="/register" style="margin: 0 10px;">没有账号？点我注册</a>
+              <!-- <a href="/user/register" style="margin: 0 10px;">没有账号？点我注册</a> -->
+              <a
+                class="register"
+                style="margin: 0 10px;"
+                v-on:click="()=>{this.$router.push('/user/register')}"
+              >没有账号？点我注册</a>
             </label>
           </div>
           <div class="controls actions">
@@ -46,8 +51,8 @@ export default {
   name: "LoginView",
 
   components: {},
-  created() {
-    function getCookie(cname) {
+  created () {
+    function getCookie (cname) {
       var name = cname + "=";
       var ca = document.cookie.split(";");
       for (var i = 0; i < ca.length; i++) {
@@ -61,15 +66,15 @@ export default {
     if (jwt !== "") {
       if (this.$route.query.referer !== undefined) {
         this.$router.push({
-          path: "/settings/personal",
+          path: "/user/settings/personal",
           query: { referer: this.$route.query.referer }
         });
       }
-      this.$router.push({ path: "/settings/personal" });
+      this.$router.push({ path: "/user/settings/personal" });
     }
   },
   methods: {
-    login: function() {
+    login: function () {
       fetch(this.$config.api_base + "user/login", {
         method: "post",
         mode: "cors",
@@ -88,12 +93,12 @@ export default {
             console.log(data, data.token);
             this.$cookies.set("token", data.token, "2", "/", "ero.ink");
             if (this.$route.query.referer !== undefined) {
-              this.$router.push("/settings/personal", {
+              this.$router.push("/user/settings/personal", {
                 referer: this.$route.query.referer
               });
             }
             this.$router.push({
-              path: "/settings/personal",
+              path: "/user/settings/personal",
               query: { referer: 1 }
             });
           } else {
@@ -108,7 +113,7 @@ export default {
     }
   },
 
-  data() {
+  data () {
     return {
       data: {
         username: "",
@@ -124,9 +129,7 @@ export default {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-bottom: 63px;
-  padding-top: 0;
+  padding-bottom: 0;
 }
 .double-column {
   align-items: center;
@@ -268,5 +271,14 @@ a {
   color: #333;
   font-size: 15px;
   padding-left: 20px;
+}
+.register {
+  cursor: pointer;
+  transition-duration: 100ms;
+}
+.register:hover {
+  //text-decoration: #1db4ff underline;
+  text-shadow: #63bdeb 0px 0 10px;
+  transition-duration: 100ms;
 }
 </style>

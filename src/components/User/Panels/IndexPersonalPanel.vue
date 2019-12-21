@@ -42,7 +42,7 @@ export default {
     currentTab: "tab1"
   }),
   methods: {
-    handleClick(newTab) {
+    handleClick (newTab) {
       this.currentTab = newTab;
     }
   }

@@ -48,17 +48,17 @@ import Tabs from "vue-tabs-with-active-line";
 export default {
   name: "PersonalSettingsPanel",
   components: { Tabs },
-  data() {
+  data () {
     return {
       tabs: [{ title: " 推送设置", value: "tab1" }],
       currentTab: "tab1"
     };
   },
   methods: {
-    handleClick(newTab) {
+    handleClick (newTab) {
       this.currentTab = newTab;
     },
-    saveprofile() {
+    saveprofile () {
       this.$Notify(
         "提示",
         "已发送一封验证邮件到您的设备上，请点击邮件中的链接进行验证",

@@ -9,17 +9,18 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: "/",
+      path: "/light/",
+      alias: "/light",
       name: "Index",
       component: Index
     },
     {
-      path: "/archives/:id",
+      path: "/light/archives/:id",
       name: "Archives",
       component: Archives
     },
     {
-      path: "/query/",
+      path: "/light/query/",
       name: "Query",
       component: Query
     }

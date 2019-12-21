@@ -65,7 +65,7 @@
           <!-- </form> -->
         </div>
         <div class="panel-wide">
-          <img class="login-img" src="img/login.jpg" />
+          <img class="login-img" src="/img/login.jpg" />
           <a
             class="login-img-source"
             href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=72175889"
@@ -81,7 +81,7 @@ export default {
   name: "LoginView",
 
   components: {},
-  created() {
+  created () {
     fetch(this.$config.api_base + "verify", {
       method: "get"
     })
@@ -100,7 +100,7 @@ export default {
       });
   },
   methods: {
-    get_verify: function() {
+    get_verify: function () {
       fetch(this.$config.api_base + "verify", {
         method: "get"
         // mode: "cors",
@@ -124,7 +124,7 @@ export default {
           this.$Notify("获取验证码失败", data.msg, "background-color:#red");
         });
     },
-    register: async function() {
+    register: async function () {
       const regx_mail = /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;
       const data = { ...this.data };
 
@@ -209,7 +209,7 @@ export default {
               "欢迎加入我们!\n我们发送了一封邮件到你的邮箱作为验证。",
               "background-color:#9d5321"
             );
-            this.$router.push("/");
+            this.$router.push("/user");
           } else {
             throw new Error("服务器说: " + fetch_res_body.msg);
           }
@@ -221,7 +221,7 @@ export default {
     }
   },
 
-  data() {
+  data () {
     return {
       data: {
         username: "",

@@ -69,7 +69,7 @@ import Tabs from "vue-tabs-with-active-line";
 export default {
   name: "PersonalSettingsPanel",
   components: { Tabs },
-  data() {
+  data () {
     return {
       tabs: [
         { title: " 基本资料", value: "tab1" },
@@ -85,11 +85,11 @@ export default {
     };
   },
   methods: {
-    handleClick(newTab) {
+    handleClick (newTab) {
       this.currentTab = newTab;
     },
-    createincitecode() {
-      function getCookie(cname) {
+    createincitecode () {
+      function getCookie (cname) {
         var name = cname + "=";
         var ca = document.cookie.split(";");
         for (var i = 0; i < ca.length; i++) {
@@ -131,9 +131,9 @@ export default {
           }
         });
     },
-    saveprofile() {
+    saveprofile () {
       console.log(1);
-      function getCookie(cname) {
+      function getCookie (cname) {
         var name = cname + "=";
         var ca = document.cookie.split(";");
         for (var i = 0; i < ca.length; i++) {

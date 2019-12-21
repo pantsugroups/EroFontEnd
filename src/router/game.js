@@ -19,7 +19,7 @@ const router = new Router({
     //   }
     // },
     {
-      path: "/",
+      path: "/game/",
       name: "index",
       component: () => {
         return import(/* webpackChunkName: 'games' */ "@/views/Game/Games.vue");
@@ -30,7 +30,7 @@ const router = new Router({
       }
     },
     {
-      path: "/games/:page?",
+      path: "/game/games/:page?",
       name: "games",
       component: () => {
         return import(/* webpackChunkName: 'games' */ "@/views/Game/Games.vue");
@@ -41,7 +41,7 @@ const router = new Router({
       }
     },
     {
-      path: "/category",
+      path: "/game/category",
       name: "category",
       component: () => {
         return import(/* webpackChunkName: 'category' */ "@/views/Game/Category.vue");
@@ -51,14 +51,14 @@ const router = new Router({
       }
     },
     {
-      path: "/detail/:id",
+      path: "/game/detail/:id",
       name: "detail",
       component: () => {
         return import(/* webpackChunkName: 'detail' */ "@/views/Game/Detail.vue");
       }
     },
     {
-      path: "/create",
+      path: "/game/create",
       name: "create",
       component: () => {
         return import(/* webpackChunkName: 'create' */ "@/views/Game/Create.vue");

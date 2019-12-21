@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <NavBar />
+    <NavBar localtion="User" />
     <div class="single-bg"></div>
     <router-view />
   </div>
 </template>
 
 <script>
-import NavBar from "@/components/User/UI/NavBar";
+import NavBar from "@/components/NavBar";
 
 export default {
   name: "App",

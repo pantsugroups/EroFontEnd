@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-bar />
+    <NavBar localtion="Game" />
     <transition name="fade" mode="out-in">
       <keep-alive include="Games">
         <router-view />
@@ -11,7 +11,7 @@
 
 <script>
 import smoothscroll from "smoothscroll-polyfill";
-import NavBar from "@/components/Game/NavBar.vue";
+import NavBar from "@/components/NavBar.vue";
 
 export default {
   components: { NavBar },

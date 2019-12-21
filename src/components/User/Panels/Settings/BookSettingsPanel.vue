@@ -29,7 +29,7 @@ export default {
   components: { Tabs, BookManagementItem },
   props: {
     user: {
-      default: function() {
+      default: function () {
         return {
           lv: "Lv. 1",
           lv_name: "普通用户",
@@ -39,14 +39,14 @@ export default {
       }
     }
   },
-  created() {
+  created () {
     if (this.user.lv_name === "管理员") {
       this.tabs.push(
         { title: " 管理书籍", value: "tab2" },
         { title: " 管理文章", value: "tab3" }
       );
     }
-    function getCookie(cname) {
+    function getCookie (cname) {
       var name = cname + "=";
       var ca = document.cookie.split(";");
       for (var i = 0; i < ca.length; i++) {
@@ -113,7 +113,7 @@ export default {
       });
   },
 
-  data() {
+  data () {
     return {
       type1: "admin",
       novels: [],
@@ -124,10 +124,10 @@ export default {
     };
   },
   methods: {
-    handleClick(newTab) {
+    handleClick (newTab) {
       this.currentTab = newTab;
     },
-    saveprofile() {
+    saveprofile () {
       this.$Notify(
         "提示",
         "已发送一封验证邮件到您的设备上，请点击邮件中的链接进行验证",

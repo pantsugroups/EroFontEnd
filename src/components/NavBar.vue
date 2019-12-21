@@ -2,14 +2,15 @@
   <div class="navbar padding-limiter">
     <div class="navbar-group">
       <div class="navbar-logo navbar-item navbar-item-withicon">
-        <span class="mdi mdi-book-open-variant"></span>Ero Login
+        <span class="mdi mdi-book-open-variant"></span>
+        Ero {{localtion||data.localtion}}
       </div>
       <router-link to="/" class="navbar-item">首页</router-link>
       <div class="navbar-item">
-        <a href="https://light.ero.ink/">小说</a>
+        <a v-on:click="()=>{this.$router.push('/light')}">小说</a>
       </div>
       <div class="navbar-item">
-        <a href="https://gal.ero.ink/">游戏</a>
+        <a v-on:click="()=>{this.$router.push('/game')}">游戏</a>
       </div>
       <div class="navbar-item">
         <a href="https://blog.ero.ink/">博客</a>
@@ -24,15 +25,16 @@
 <script>
 export default {
   name: "NavBar",
-  props: {},
-  data() {
+  props: ["localtion"],
+  data () {
     return {
       data: {
-        navbar: "登陆"
+        navbar: "登陆",
+        localtion: "User"
       }
     };
   },
-  created() {
+  created () {
     //   fetch(this.$config.api_base+'auth/fast_api',{credentials:"include"}).then(data=>data.json()).then(data=>{
 
     //       if (data.code === -16){
@@ -43,7 +45,7 @@ export default {
     //       }
     //   })
 
-    function getCookie(cname) {
+    function getCookie (cname) {
       var name = cname + "=";
       var ca = document.cookie.split(";");
       for (var i = 0; i < ca.length; i++) {
@@ -64,7 +66,7 @@ export default {
     }
   },
   methods: {
-    userinfo: function() {
+    userinfo: function () {
       if (this.data.navbar == "登陆") {
         this.$router.push({ path: "/" });
       } else {

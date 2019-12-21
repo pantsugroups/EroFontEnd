@@ -41,7 +41,7 @@ export default {
   name: "UserInfoPanel",
   props: {
     user: {
-      default: function() {
+      default: function () {
         return {
           lv: "Lv. 1",
           lv_name: "普通用户",
@@ -51,7 +51,7 @@ export default {
       }
     }
   },
-  data() {
+  data () {
     return {
       title: "goushi"
     };

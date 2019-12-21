@@ -1,9 +1,10 @@
 <template>
   <div>
-    <NavBar :menu="menu"></NavBar>
+    <!-- <NavBar :menu="menu"></NavBar> -->
+    <NavBar :menu="menu" localtion="Light"></NavBar>
     <Menu :menu="menu"></Menu>
     <Background></Background>
-    <mu-container style="margin-top:15px;">
+    <mu-container style="margin-top:75px;">
       <mu-row>
         <mu-col span="12">
           <mu-paper class="demo-paper" :z-depth="3">
@@ -55,12 +56,7 @@
                 </mu-chip>
               </mu-card-text>
               <mu-card-actions>
-                <mu-button
-                  color="secondary"
-                  full-width
-                  v-bind:to="'/archives/' + n.id"
-                  >详情</mu-button
-                >
+                <mu-button color="secondary" full-width v-bind:to="'/light/archives/' + n.id">详情</mu-button>
               </mu-card-actions>
             </mu-card>
           </mu-paper>
@@ -69,13 +65,7 @@
     </mu-container>
     <mu-container style="margin-top:15px;margin-bottom:15px;">
       <mu-flex justify-content="center" v-on:click="flush()">
-        <mu-pagination
-          raised
-          circle
-          :total="total"
-          :page-size="16"
-          :current.sync="current"
-        ></mu-pagination>
+        <mu-pagination raised circle :total="total" :page-size="16" :current.sync="current"></mu-pagination>
       </mu-flex>
     </mu-container>
   </div>
@@ -84,7 +74,8 @@
 <script>
 import Carousel from "@/components/Light/Carousel.vue";
 import Background from "@/components/Light/Background.vue";
-import NavBar from "@/components/Light/NavBar.vue";
+// import NavBar from "@/components/Light/NavBar.vue";
+import NavBar from "@/components/NavBar.vue";
 import Menu from "@/components/Light/Menu.vue";
 export default {
   name: "Index",

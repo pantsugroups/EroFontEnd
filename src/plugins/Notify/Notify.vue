@@ -15,7 +15,7 @@
 export default {
   name: "Notify",
   props: ["notifications"],
-  created: function() {
+  created: function () {
     this.notifications = [];
   }
 };

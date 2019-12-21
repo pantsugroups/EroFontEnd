@@ -21,7 +21,7 @@ import MyCommentItem from "@/components/User/Items/MyCommentItem.vue";
 export default {
   name: "CommentSettingsPanel",
   components: { Tabs, MyCommentItem },
-  data() {
+  data () {
     return {
       tabs: [
         { title: " 我的评论", value: "tab1" },
@@ -31,8 +31,8 @@ export default {
       comments: []
     };
   },
-  created() {
-    function getCookie(cname) {
+  created () {
+    function getCookie (cname) {
       var name = cname + "=";
       var ca = document.cookie.split(";");
       for (var i = 0; i < ca.length; i++) {
@@ -71,10 +71,10 @@ export default {
       });
   },
   methods: {
-    handleClick(newTab) {
+    handleClick (newTab) {
       this.currentTab = newTab;
     },
-    saveprofile() {
+    saveprofile () {
       this.$Notify(
         "提示",
         "已发送一封验证邮件到您的设备上，请点击邮件中的链接进行验证",

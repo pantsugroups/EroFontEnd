@@ -12,7 +12,7 @@ export default {
   name: "MyCommentItem",
   props: {
     comment: {
-      default: function() {
+      default: function () {
         return {
           content: "<p>强推！</p><p>这书不火我让鳖直播女装！</p>",
           origin: "/book/1",

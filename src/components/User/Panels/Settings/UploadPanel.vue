@@ -225,7 +225,7 @@ import Tabs from "vue-tabs-with-active-line";
 export default {
   name: "PersonalSettingsPanel",
   components: { Tabs },
-  created() {
+  created () {
     var aid = this.$route.query.archiveid;
     var nid = this.$route.query.novelid;
     if (aid !== undefined) {
@@ -303,7 +303,7 @@ export default {
         });
     }
   },
-  data() {
+  data () {
     return {
       selected1: "",
       selected2: "",
@@ -352,7 +352,7 @@ export default {
     };
   },
   methods: {
-    delete2Category(id, category, type) {
+    delete2Category (id, category, type) {
       const jwt = localStorage.getItem("jwt");
       if (jwt === null || jwt === "null") {
         this.$Notify("失败", "您的登陆凭据已到期", "background-color:#4eb739");
@@ -379,7 +379,7 @@ export default {
           }
         });
     },
-    append2Category(id, category, type) {
+    append2Category (id, category, type) {
       const jwt = localStorage.getItem("jwt");
       if (jwt === null || jwt === "null") {
         this.$Notify("失败", "您的登陆凭据已到期", "background-color:#4eb739");
@@ -406,7 +406,7 @@ export default {
           }
         });
     },
-    upVolume(event) {
+    upVolume (event) {
       console.log(event.target.files[0]);
       var formData = new FormData();
       formData.append("type", "novel");
@@ -437,7 +437,7 @@ export default {
           }
         });
     },
-    deleteCategory(id) {
+    deleteCategory (id) {
       const jwt = localStorage.getItem("jwt");
       if (jwt === null || jwt === "null") {
         this.$Notify("失败", "您的登陆凭据已到期", "background-color:#4eb739");
@@ -460,7 +460,7 @@ export default {
           }
         });
     },
-    updateCover(event) {
+    updateCover (event) {
       console.log(event.target.files[0]);
       var formData = new FormData();
       formData.append("type", "img");
@@ -490,7 +490,7 @@ export default {
           }
         });
     },
-    CreateCategory() {
+    CreateCategory () {
       var formData = new FormData();
       formData.append("title", this.category);
       formData.append("type", this.selected1);
@@ -517,7 +517,7 @@ export default {
           }
         });
     },
-    CreateArchive() {
+    CreateArchive () {
       const jwt = localStorage.getItem("jwt");
       if (jwt === null || jwt === "null") {
         this.$Notify("失败", "您的登陆凭据已到期", "background-color:#4eb739");
@@ -556,8 +556,8 @@ export default {
           }
         });
     },
-    CreateNovel() {
-      function getCookie(cname) {
+    CreateNovel () {
+      function getCookie (cname) {
         var name = cname + "=";
         var ca = document.cookie.split(";");
         for (var i = 0; i < ca.length; i++) {
@@ -604,7 +604,7 @@ export default {
           }
         });
     },
-    CreateVolume() {
+    CreateVolume () {
       const jwt = localStorage.getItem("jwt");
       if (jwt === null || jwt === "null") {
         this.$Notify("失败", "您的登陆凭据已到期", "background-color:#4eb739");
@@ -637,10 +637,10 @@ export default {
           }
         });
     },
-    handleClick(newTab) {
+    handleClick (newTab) {
       this.currentTab = newTab;
     },
-    saveprofile() {
+    saveprofile () {
       this.$Notify(
         "提示",
         "已发送一封验证邮件到您的设备上，请点击邮件中的链接进行验证",

@@ -24,10 +24,10 @@ export default {
   name: "LoginView",
 
   components: {},
-  created() {},
+  created () {},
   methods: {
-    sendmail: function() {
-      function getCookie(cname) {
+    sendmail: function () {
+      function getCookie (cname) {
         var name = cname + "=";
         var ca = document.cookie.split(";");
         for (var i = 0; i < ca.length; i++) {
@@ -69,7 +69,7 @@ export default {
     }
   },
 
-  data() {
+  data () {
     return {
       data: {
         username: "",

@@ -26,13 +26,13 @@
 <script>
 export default {
   name: "BookListItem",
-  created() {
+  created () {
     console.log(this.book);
   },
 
   props: {
     book: {
-      default: function() {
+      default: function () {
         return {
           id: "1",
           title: "胖次群的奇妙日常",
@@ -47,7 +47,7 @@ export default {
     }
   },
   methods: {
-    jump: function() {
+    jump: function () {
       window.location.href = "/book/" + this.book.id;
     }
   }

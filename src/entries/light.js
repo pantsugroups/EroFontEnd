@@ -7,6 +7,7 @@ import MuseUI from "muse-ui";
 import "muse-ui/dist/muse-ui.css";
 import "typeface-roboto";
 import VueCookies from "vue-cookies";
+import "@mdi/font/css/materialdesignicons.css";
 
 Vue.prototype.$config = config;
 Vue.use(MuseUI);
